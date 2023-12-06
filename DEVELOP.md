@@ -122,3 +122,14 @@
 >原理
 >>[LSQ简单解释](https://zhuanlan.zhihu.com/p/406891271)
 <br/>[**LSQ详细原理-jermmy大佬**](https://zhuanlan.zhihu.com/p/396001177)
+
+6. 当前进度
+>feature
+>>能使用DDP正常跑
+
+>bugs
+>>真实推理部分非正常
+
+>deprecated
+>>QSoftmax算子弃用
+<br/>post_training_quantize暂时不用

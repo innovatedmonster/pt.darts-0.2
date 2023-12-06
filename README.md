@@ -6,7 +6,7 @@
 
 **aim:** darts+lsq;  
 
-1. darts+朴素qat;  
+1. darts+朴素qat;✔  
 2. darts+lsq;
 
 ## Details

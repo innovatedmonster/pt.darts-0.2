@@ -1,0 +1,728 @@
+nohup: ignoring input
+11/21 09:40:39 AM | 
+11/21 09:40:39 AM | Parameters:
+11/21 09:40:39 AM | ALPHA_LR=0.0003
+11/21 09:40:39 AM | ALPHA_WEIGHT_DECAY=0.001
+11/21 09:40:39 AM | BATCH_SIZE=64
+11/21 09:40:39 AM | DATA_PATH=./data/
+11/21 09:40:39 AM | DATASET=cifar10
+11/21 09:40:39 AM | EPOCHS=100
+11/21 09:40:39 AM | GPUS=[0, 1, 2, 3]
+11/21 09:40:39 AM | INIT_CHANNELS=16
+11/21 09:40:39 AM | LAYERS=8
+11/21 09:40:39 AM | NAME=cifar10
+11/21 09:40:39 AM | PATH=searchs/cifar10
+11/21 09:40:39 AM | PLOT_PATH=searchs/cifar10/plots
+11/21 09:40:39 AM | PRINT_FREQ=50
+11/21 09:40:39 AM | SEED=2
+11/21 09:40:39 AM | W_GRAD_CLIP=5.0
+11/21 09:40:39 AM | W_LR=0.07
+11/21 09:40:39 AM | W_LR_MIN=0.001
+11/21 09:40:39 AM | W_MOMENTUM=0.9
+11/21 09:40:39 AM | W_WEIGHT_DECAY=0.0003
+11/21 09:40:39 AM | WORKERS=4
+11/21 09:40:39 AM | 
+11/21 09:40:39 AM | Logger is set - training start
+/home/huawei/anaconda3/envs/lfh_darts/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:143: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  "https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate", UserWarning)
+/home/huawei/anaconda3/envs/lfh_darts/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:808: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  "please use `get_last_lr()`.", UserWarning)
+####### ALPHA #######
+# Alpha - normal
+tensor([[0.1249, 0.1252, 0.1249, 0.1249, 0.1249, 0.1252, 0.1249, 0.1250],
+        [0.1249, 0.1251, 0.1250, 0.1250, 0.1252, 0.1249, 0.1250, 0.1250]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1249, 0.1253, 0.1250, 0.1250, 0.1249, 0.1250, 0.1250, 0.1249],
+        [0.1251, 0.1247, 0.1249, 0.1253, 0.1248, 0.1249, 0.1251, 0.1253],
+        [0.1250, 0.1250, 0.1249, 0.1251, 0.1252, 0.1250, 0.1251, 0.1249]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1250, 0.1249, 0.1250, 0.1250, 0.1250, 0.1251, 0.1249, 0.1251],
+        [0.1250, 0.1249, 0.1251, 0.1249, 0.1249, 0.1253, 0.1252, 0.1248],
+        [0.1250, 0.1250, 0.1251, 0.1248, 0.1251, 0.1250, 0.1251, 0.1250],
+        [0.1250, 0.1251, 0.1250, 0.1251, 0.1251, 0.1251, 0.1249, 0.1248]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1250, 0.1250, 0.1249, 0.1249, 0.1251, 0.1250, 0.1249, 0.1252],
+        [0.1250, 0.1252, 0.1252, 0.1248, 0.1250, 0.1249, 0.1248, 0.1251],
+        [0.1251, 0.1251, 0.1250, 0.1251, 0.1248, 0.1250, 0.1249, 0.1249],
+        [0.1249, 0.1250, 0.1250, 0.1253, 0.1251, 0.1251, 0.1247, 0.1249],
+        [0.1251, 0.1251, 0.1252, 0.1249, 0.1249, 0.1251, 0.1250, 0.1249]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+
+# Alpha - reduce
+tensor([[0.1248, 0.1249, 0.1249, 0.1251, 0.1250, 0.1250, 0.1251, 0.1251],
+        [0.1250, 0.1248, 0.1249, 0.1252, 0.1249, 0.1250, 0.1249, 0.1251]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1251, 0.1249, 0.1252, 0.1249, 0.1250, 0.1250, 0.1249, 0.1250],
+        [0.1250, 0.1249, 0.1250, 0.1251, 0.1251, 0.1249, 0.1250, 0.1251],
+        [0.1250, 0.1250, 0.1250, 0.1249, 0.1250, 0.1250, 0.1250, 0.1252]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1251, 0.1247, 0.1249, 0.1252, 0.1252, 0.1249, 0.1251, 0.1249],
+        [0.1250, 0.1250, 0.1250, 0.1251, 0.1253, 0.1249, 0.1249, 0.1248],
+        [0.1250, 0.1252, 0.1250, 0.1250, 0.1251, 0.1248, 0.1251, 0.1249],
+        [0.1250, 0.1251, 0.1251, 0.1249, 0.1248, 0.1251, 0.1250, 0.1250]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1250, 0.1249, 0.1251, 0.1251, 0.1251, 0.1249, 0.1250, 0.1250],
+        [0.1252, 0.1249, 0.1251, 0.1251, 0.1250, 0.1249, 0.1249, 0.1249],
+        [0.1249, 0.1250, 0.1251, 0.1250, 0.1249, 0.1250, 0.1250, 0.1252],
+        [0.1250, 0.1249, 0.1250, 0.1251, 0.1250, 0.1251, 0.1250, 0.1249],
+        [0.1249, 0.1251, 0.1250, 0.1251, 0.1248, 0.1251, 0.1249, 0.1251]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+#####################
+Files already downloaded and verified
+Files already downloaded and verified
+/home/huawei/anaconda3/envs/lfh_darts/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:143: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  "https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate", UserWarning)
+/home/huawei/anaconda3/envs/lfh_darts/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:808: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  "please use `get_last_lr()`.", UserWarning)
+Files already downloaded and verified
+/home/huawei/anaconda3/envs/lfh_darts/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:143: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  "https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate", UserWarning)
+/home/huawei/anaconda3/envs/lfh_darts/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:808: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  "please use `get_last_lr()`.", UserWarning)
+Files already downloaded and verified
+/home/huawei/anaconda3/envs/lfh_darts/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:143: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  "https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate", UserWarning)
+/home/huawei/anaconda3/envs/lfh_darts/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:808: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  "please use `get_last_lr()`.", UserWarning)
+11/21 09:40:50 AM | Train: [ 1/100] Step 000/097 Loss 2.381 Prec@(1,5) (9.4%, 50.0%)
+11/21 09:42:35 AM | Train: [ 1/100] Step 050/097 Loss 2.175 Prec@(1,5) (21.9%, 77.0%)
+11/21 09:44:13 AM | Train: [ 1/100] Step 097/097 Loss 2.038 Prec@(1,5) (25.9%, 80.2%)
+11/21 09:44:13 AM | Train: [ 1/100] Final Prec@1 25.8880%
+step:  10
+step:  20
+step:  30
+step:  40
+step:  50
+step:  60
+step:  70
+step:  80
+step:  90
+11/21 09:44:13 AM | Valid: [ 1/100] Step 000/097 Loss 1.791 Prec@(1,5) (43.8%, 89.1%)
+11/21 09:44:19 AM | Valid: [ 1/100] Step 050/097 Loss 1.752 Prec@(1,5) (34.0%, 86.7%)
+11/21 09:44:25 AM | Valid: [ 1/100] Step 097/097 Loss 1.750 Prec@(1,5) (34.1%, 86.9%)
+11/21 09:44:25 AM | Valid: [ 1/100] Final Prec@1 34.1440%
+11/21 09:44:25 AM | genotype = Genotype(normal=[[('dil_conv_3x3', 1), ('dil_conv_3x3', 0)], [('sep_conv_5x5', 2), ('dil_conv_3x3', 1)], [('sep_conv_3x3', 3), ('dil_conv_3x3', 1)], [('sep_conv_3x3', 3), ('dil_conv_3x3', 4)]], normal_concat=range(2, 6), reduce=[[('max_pool_3x3', 0), ('sep_conv_5x5', 1)], [('skip_connect', 2), ('max_pool_3x3', 0)], [('max_pool_3x3', 0), ('skip_connect', 2)], [('skip_connect', 2), ('skip_connect', 3)]], reduce_concat=range(2, 6))
+11/21 09:44:26 AM | Final best Prec@1 = 34.1440%
+11/21 09:44:26 AM | Best Genotype = Genotype(normal=[[('dil_conv_3x3', 1), ('dil_conv_3x3', 0)], [('sep_conv_5x5', 2), ('dil_conv_3x3', 1)], [('sep_conv_3x3', 3), ('dil_conv_3x3', 1)], [('sep_conv_3x3', 3), ('dil_conv_3x3', 4)]], normal_concat=range(2, 6), reduce=[[('max_pool_3x3', 0), ('sep_conv_5x5', 1)], [('skip_connect', 2), ('max_pool_3x3', 0)], [('max_pool_3x3', 0), ('skip_connect', 2)], [('skip_connect', 2), ('skip_connect', 3)]], reduce_concat=range(2, 6))
+/home/huawei/anaconda3/envs/lfh_darts/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:808: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  "please use `get_last_lr()`.", UserWarning)
+####### ALPHA #######
+# Alpha - normal
+tensor([[0.1248, 0.1243, 0.1249, 0.1249, 0.1252, 0.1253, 0.1252, 0.1255],
+        [0.1238, 0.1237, 0.1242, 0.1253, 0.1249, 0.1258, 0.1257, 0.1266]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1247, 0.1240, 0.1246, 0.1253, 0.1255, 0.1254, 0.1251, 0.1255],
+        [0.1238, 0.1232, 0.1237, 0.1259, 0.1253, 0.1259, 0.1257, 0.1265],
+        [0.1232, 0.1231, 0.1241, 0.1256, 0.1261, 0.1258, 0.1254, 0.1266]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1243, 0.1237, 0.1244, 0.1250, 0.1251, 0.1257, 0.1254, 0.1262],
+        [0.1236, 0.1234, 0.1240, 0.1257, 0.1254, 0.1261, 0.1258, 0.1260],
+        [0.1230, 0.1231, 0.1242, 0.1255, 0.1260, 0.1254, 0.1260, 0.1270],
+        [0.1229, 0.1228, 0.1234, 0.1263, 0.1260, 0.1261, 0.1256, 0.1269]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1243, 0.1239, 0.1241, 0.1252, 0.1259, 0.1255, 0.1251, 0.1259],
+        [0.1236, 0.1238, 0.1242, 0.1252, 0.1254, 0.1258, 0.1255, 0.1266],
+        [0.1231, 0.1230, 0.1239, 0.1259, 0.1257, 0.1258, 0.1259, 0.1267],
+        [0.1229, 0.1229, 0.1236, 0.1264, 0.1259, 0.1257, 0.1257, 0.1269],
+        [0.1227, 0.1226, 0.1232, 0.1261, 0.1263, 0.1263, 0.1260, 0.1268]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+
+# Alpha - reduce
+tensor([[0.1257, 0.1252, 0.1247, 0.1248, 0.1247, 0.1246, 0.1251, 0.1252],
+        [0.1251, 0.1249, 0.1255, 0.1245, 0.1255, 0.1251, 0.1247, 0.1248]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1257, 0.1251, 0.1255, 0.1243, 0.1248, 0.1252, 0.1251, 0.1242],
+        [0.1255, 0.1253, 0.1250, 0.1250, 0.1245, 0.1252, 0.1248, 0.1246],
+        [0.1241, 0.1241, 0.1260, 0.1247, 0.1248, 0.1246, 0.1258, 0.1260]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1263, 0.1254, 0.1248, 0.1253, 0.1251, 0.1244, 0.1243, 0.1244],
+        [0.1255, 0.1253, 0.1251, 0.1249, 0.1248, 0.1250, 0.1248, 0.1244],
+        [0.1245, 0.1248, 0.1261, 0.1249, 0.1252, 0.1243, 0.1253, 0.1249],
+        [0.1244, 0.1247, 0.1259, 0.1251, 0.1246, 0.1251, 0.1253, 0.1249]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1258, 0.1254, 0.1251, 0.1252, 0.1253, 0.1245, 0.1245, 0.1243],
+        [0.1255, 0.1251, 0.1249, 0.1252, 0.1250, 0.1248, 0.1246, 0.1248],
+        [0.1245, 0.1247, 0.1263, 0.1243, 0.1248, 0.1244, 0.1251, 0.1260],
+        [0.1240, 0.1243, 0.1258, 0.1249, 0.1254, 0.1249, 0.1248, 0.1258],
+        [0.1238, 0.1246, 0.1255, 0.1254, 0.1252, 0.1252, 0.1243, 0.1260]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+#####################
+
+11/21 09:44:28 AM | Train: [ 2/100] Step 000/097 Loss 1.727 Prec@(1,5) (32.8%, 87.5%)
+11/21 09:46:12 AM | Train: [ 2/100] Step 050/097 Loss 1.733 Prec@(1,5) (34.8%, 87.5%)
+11/21 09:47:49 AM | Train: [ 2/100] Step 097/097 Loss 1.693 Prec@(1,5) (36.6%, 88.2%)
+11/21 09:47:49 AM | Train: [ 2/100] Final Prec@1 36.5920%
+step:  10
+step:  20
+step:  30
+step:  40
+step:  50
+step:  60
+step:  70
+step:  80
+step:  90
+11/21 09:47:49 AM | Valid: [ 2/100] Step 000/097 Loss 1.723 Prec@(1,5) (39.1%, 89.1%)
+11/21 09:47:56 AM | Valid: [ 2/100] Step 050/097 Loss 1.658 Prec@(1,5) (37.3%, 89.9%)
+11/21 09:48:02 AM | Valid: [ 2/100] Step 097/097 Loss 1.669 Prec@(1,5) (37.1%, 89.5%)
+11/21 09:48:02 AM | Valid: [ 2/100] Final Prec@1 37.1200%
+11/21 09:48:02 AM | genotype = Genotype(normal=[[('dil_conv_3x3', 1), ('sep_conv_3x3', 0)], [('dil_conv_3x3', 2), ('dil_conv_5x5', 1)], [('sep_conv_3x3', 3), ('dil_conv_5x5', 2)], [('sep_conv_5x5', 4), ('dil_conv_5x5', 2)]], normal_concat=range(2, 6), reduce=[[('max_pool_3x3', 0), ('max_pool_3x3', 1)], [('skip_connect', 2), ('max_pool_3x3', 1)], [('max_pool_3x3', 0), ('dil_conv_5x5', 2)], [('skip_connect', 2), ('max_pool_3x3', 0)]], reduce_concat=range(2, 6))
+11/21 09:48:03 AM | Final best Prec@1 = 37.1200%
+11/21 09:48:03 AM | Best Genotype = Genotype(normal=[[('dil_conv_3x3', 1), ('sep_conv_3x3', 0)], [('dil_conv_3x3', 2), ('dil_conv_5x5', 1)], [('sep_conv_3x3', 3), ('dil_conv_5x5', 2)], [('sep_conv_5x5', 4), ('dil_conv_5x5', 2)]], normal_concat=range(2, 6), reduce=[[('max_pool_3x3', 0), ('max_pool_3x3', 1)], [('skip_connect', 2), ('max_pool_3x3', 1)], [('max_pool_3x3', 0), ('dil_conv_5x5', 2)], [('skip_connect', 2), ('max_pool_3x3', 0)]], reduce_concat=range(2, 6))
+/home/huawei/anaconda3/envs/lfh_darts/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:808: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  "please use `get_last_lr()`.", UserWarning)
+####### ALPHA #######
+# Alpha - normal
+tensor([[0.1250, 0.1235, 0.1249, 0.1254, 0.1252, 0.1253, 0.1252, 0.1255],
+        [0.1231, 0.1228, 0.1238, 0.1255, 0.1250, 0.1264, 0.1260, 0.1275]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1250, 0.1234, 0.1244, 0.1259, 0.1253, 0.1261, 0.1244, 0.1255],
+        [0.1235, 0.1226, 0.1235, 0.1261, 0.1250, 0.1258, 0.1262, 0.1273],
+        [0.1227, 0.1223, 0.1242, 0.1256, 0.1259, 0.1263, 0.1254, 0.1276]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1245, 0.1231, 0.1243, 0.1253, 0.1253, 0.1254, 0.1254, 0.1266],
+        [0.1230, 0.1226, 0.1236, 0.1259, 0.1256, 0.1261, 0.1264, 0.1268],
+        [0.1221, 0.1219, 0.1238, 0.1258, 0.1265, 0.1251, 0.1268, 0.1280],
+        [0.1218, 0.1212, 0.1224, 0.1273, 0.1263, 0.1264, 0.1264, 0.1281]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1245, 0.1234, 0.1242, 0.1251, 0.1261, 0.1257, 0.1248, 0.1262],
+        [0.1233, 0.1232, 0.1240, 0.1249, 0.1255, 0.1262, 0.1257, 0.1273],
+        [0.1224, 0.1220, 0.1234, 0.1259, 0.1260, 0.1262, 0.1266, 0.1274],
+        [0.1222, 0.1217, 0.1230, 0.1266, 0.1261, 0.1265, 0.1261, 0.1279],
+        [0.1218, 0.1213, 0.1224, 0.1264, 0.1269, 0.1268, 0.1266, 0.1277]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+
+# Alpha - reduce
+tensor([[0.1262, 0.1255, 0.1248, 0.1249, 0.1239, 0.1244, 0.1250, 0.1252],
+        [0.1257, 0.1251, 0.1254, 0.1243, 0.1248, 0.1255, 0.1244, 0.1248]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1261, 0.1253, 0.1260, 0.1244, 0.1243, 0.1248, 0.1252, 0.1238],
+        [0.1261, 0.1256, 0.1250, 0.1248, 0.1241, 0.1253, 0.1247, 0.1245],
+        [0.1237, 0.1235, 0.1265, 0.1246, 0.1245, 0.1246, 0.1257, 0.1268]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1267, 0.1256, 0.1245, 0.1251, 0.1254, 0.1245, 0.1244, 0.1238],
+        [0.1261, 0.1256, 0.1250, 0.1251, 0.1246, 0.1246, 0.1251, 0.1240],
+        [0.1241, 0.1239, 0.1261, 0.1255, 0.1246, 0.1244, 0.1265, 0.1250],
+        [0.1239, 0.1239, 0.1259, 0.1254, 0.1249, 0.1253, 0.1253, 0.1255]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1265, 0.1257, 0.1253, 0.1252, 0.1249, 0.1244, 0.1244, 0.1237],
+        [0.1259, 0.1250, 0.1253, 0.1248, 0.1253, 0.1246, 0.1245, 0.1245],
+        [0.1245, 0.1244, 0.1269, 0.1238, 0.1247, 0.1245, 0.1244, 0.1268],
+        [0.1234, 0.1234, 0.1258, 0.1251, 0.1253, 0.1252, 0.1255, 0.1263],
+        [0.1234, 0.1242, 0.1260, 0.1255, 0.1253, 0.1250, 0.1240, 0.1265]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+#####################
+
+11/21 09:48:06 AM | Train: [ 3/100] Step 000/097 Loss 1.633 Prec@(1,5) (40.6%, 87.5%)
+11/21 09:49:49 AM | Train: [ 3/100] Step 050/097 Loss 1.572 Prec@(1,5) (42.6%, 89.9%)
+11/21 09:51:29 AM | Train: [ 3/100] Step 097/097 Loss 1.546 Prec@(1,5) (43.1%, 90.7%)
+11/21 09:51:29 AM | Train: [ 3/100] Final Prec@1 43.0560%
+step:  10
+step:  20
+step:  30
+step:  40
+step:  50
+step:  60
+step:  70
+step:  80
+step:  90
+11/21 09:51:29 AM | Valid: [ 3/100] Step 000/097 Loss 1.579 Prec@(1,5) (40.6%, 92.2%)
+11/21 09:51:35 AM | Valid: [ 3/100] Step 050/097 Loss 1.533 Prec@(1,5) (43.1%, 92.3%)
+11/21 09:51:41 AM | Valid: [ 3/100] Step 097/097 Loss 1.548 Prec@(1,5) (42.6%, 92.0%)
+11/21 09:51:41 AM | Valid: [ 3/100] Final Prec@1 42.6240%
+11/21 09:51:41 AM | genotype = Genotype(normal=[[('dil_conv_3x3', 1), ('sep_conv_3x3', 0)], [('dil_conv_3x3', 2), ('sep_conv_3x3', 1)], [('sep_conv_3x3', 3), ('dil_conv_5x5', 2)], [('dil_conv_3x3', 4), ('dil_conv_3x3', 3)]], normal_concat=range(2, 6), reduce=[[('max_pool_3x3', 0), ('max_pool_3x3', 1)], [('skip_connect', 2), ('max_pool_3x3', 1)], [('sep_conv_5x5', 0), ('dil_conv_5x5', 2)], [('skip_connect', 2), ('skip_connect', 4)]], reduce_concat=range(2, 6))
+11/21 09:51:42 AM | Final best Prec@1 = 42.6240%
+11/21 09:51:42 AM | Best Genotype = Genotype(normal=[[('dil_conv_3x3', 1), ('sep_conv_3x3', 0)], [('dil_conv_3x3', 2), ('sep_conv_3x3', 1)], [('sep_conv_3x3', 3), ('dil_conv_5x5', 2)], [('dil_conv_3x3', 4), ('dil_conv_3x3', 3)]], normal_concat=range(2, 6), reduce=[[('max_pool_3x3', 0), ('max_pool_3x3', 1)], [('skip_connect', 2), ('max_pool_3x3', 1)], [('sep_conv_5x5', 0), ('dil_conv_5x5', 2)], [('skip_connect', 2), ('skip_connect', 4)]], reduce_concat=range(2, 6))
+/home/huawei/anaconda3/envs/lfh_darts/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:808: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  "please use `get_last_lr()`.", UserWarning)
+####### ALPHA #######
+# Alpha - normal
+tensor([[0.1252, 0.1223, 0.1247, 0.1259, 0.1248, 0.1257, 0.1251, 0.1262],
+        [0.1229, 0.1218, 0.1235, 0.1260, 0.1252, 0.1265, 0.1261, 0.1278]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1252, 0.1222, 0.1240, 0.1262, 0.1257, 0.1262, 0.1247, 0.1259],
+        [0.1235, 0.1219, 0.1233, 0.1263, 0.1253, 0.1261, 0.1258, 0.1278],
+        [0.1226, 0.1212, 0.1241, 0.1257, 0.1253, 0.1266, 0.1257, 0.1288]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1247, 0.1219, 0.1239, 0.1251, 0.1256, 0.1256, 0.1254, 0.1277],
+        [0.1231, 0.1222, 0.1237, 0.1257, 0.1256, 0.1259, 0.1265, 0.1272],
+        [0.1219, 0.1210, 0.1238, 0.1254, 0.1260, 0.1259, 0.1272, 0.1288],
+        [0.1211, 0.1198, 0.1216, 0.1276, 0.1274, 0.1265, 0.1270, 0.1291]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1247, 0.1227, 0.1240, 0.1254, 0.1259, 0.1260, 0.1245, 0.1267],
+        [0.1230, 0.1224, 0.1235, 0.1252, 0.1254, 0.1273, 0.1253, 0.1279],
+        [0.1220, 0.1208, 0.1229, 0.1262, 0.1262, 0.1262, 0.1273, 0.1283],
+        [0.1215, 0.1202, 0.1219, 0.1266, 0.1270, 0.1275, 0.1264, 0.1289],
+        [0.1207, 0.1195, 0.1212, 0.1272, 0.1275, 0.1275, 0.1275, 0.1288]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+
+# Alpha - reduce
+tensor([[0.1264, 0.1250, 0.1254, 0.1254, 0.1237, 0.1241, 0.1247, 0.1254],
+        [0.1258, 0.1247, 0.1253, 0.1245, 0.1251, 0.1258, 0.1244, 0.1245]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1263, 0.1249, 0.1267, 0.1244, 0.1244, 0.1246, 0.1252, 0.1234],
+        [0.1269, 0.1255, 0.1243, 0.1248, 0.1239, 0.1258, 0.1243, 0.1246],
+        [0.1241, 0.1232, 0.1271, 0.1242, 0.1242, 0.1247, 0.1253, 0.1271]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1269, 0.1254, 0.1242, 0.1244, 0.1273, 0.1241, 0.1239, 0.1238],
+        [0.1265, 0.1255, 0.1253, 0.1249, 0.1244, 0.1251, 0.1245, 0.1238],
+        [0.1240, 0.1232, 0.1261, 0.1259, 0.1247, 0.1245, 0.1273, 0.1243],
+        [0.1235, 0.1231, 0.1262, 0.1258, 0.1251, 0.1255, 0.1252, 0.1255]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1271, 0.1255, 0.1254, 0.1243, 0.1248, 0.1250, 0.1247, 0.1232],
+        [0.1268, 0.1252, 0.1250, 0.1246, 0.1252, 0.1249, 0.1236, 0.1246],
+        [0.1249, 0.1241, 0.1276, 0.1234, 0.1240, 0.1240, 0.1250, 0.1271],
+        [0.1226, 0.1219, 0.1254, 0.1259, 0.1265, 0.1255, 0.1260, 0.1263],
+        [0.1232, 0.1236, 0.1267, 0.1254, 0.1250, 0.1251, 0.1239, 0.1271]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+#####################
+
+11/21 09:51:44 AM | Train: [ 4/100] Step 000/097 Loss 1.558 Prec@(1,5) (45.3%, 95.3%)
+11/21 09:53:28 AM | Train: [ 4/100] Step 050/097 Loss 1.458 Prec@(1,5) (45.8%, 92.6%)
+11/21 09:55:06 AM | Train: [ 4/100] Step 097/097 Loss 1.426 Prec@(1,5) (46.9%, 92.8%)
+11/21 09:55:07 AM | Train: [ 4/100] Final Prec@1 46.8960%
+step:  10
+step:  20
+step:  30
+step:  40
+step:  50
+step:  60
+step:  70
+step:  80
+step:  90
+11/21 09:55:07 AM | Valid: [ 4/100] Step 000/097 Loss 1.245 Prec@(1,5) (56.2%, 96.9%)
+11/21 09:55:14 AM | Valid: [ 4/100] Step 050/097 Loss 1.353 Prec@(1,5) (50.7%, 93.5%)
+11/21 09:55:20 AM | Valid: [ 4/100] Step 097/097 Loss 1.372 Prec@(1,5) (50.6%, 92.9%)
+11/21 09:55:20 AM | Valid: [ 4/100] Final Prec@1 50.6240%
+11/21 09:55:20 AM | genotype = Genotype(normal=[[('dil_conv_3x3', 1), ('max_pool_3x3', 0)], [('dil_conv_3x3', 1), ('dil_conv_3x3', 2)], [('sep_conv_5x5', 3), ('dil_conv_5x5', 2)], [('dil_conv_5x5', 4), ('dil_conv_3x3', 3)]], normal_concat=range(2, 6), reduce=[[('max_pool_3x3', 1), ('max_pool_3x3', 0)], [('max_pool_3x3', 1), ('skip_connect', 2)], [('dil_conv_5x5', 2), ('sep_conv_5x5', 0)], [('skip_connect', 2), ('sep_conv_5x5', 3)]], reduce_concat=range(2, 6))
+11/21 09:55:20 AM | Final best Prec@1 = 50.6240%
+11/21 09:55:20 AM | Best Genotype = Genotype(normal=[[('dil_conv_3x3', 1), ('max_pool_3x3', 0)], [('dil_conv_3x3', 1), ('dil_conv_3x3', 2)], [('sep_conv_5x5', 3), ('dil_conv_5x5', 2)], [('dil_conv_5x5', 4), ('dil_conv_3x3', 3)]], normal_concat=range(2, 6), reduce=[[('max_pool_3x3', 1), ('max_pool_3x3', 0)], [('max_pool_3x3', 1), ('skip_connect', 2)], [('dil_conv_5x5', 2), ('sep_conv_5x5', 0)], [('skip_connect', 2), ('sep_conv_5x5', 3)]], reduce_concat=range(2, 6))
+/home/huawei/anaconda3/envs/lfh_darts/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:808: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  "please use `get_last_lr()`.", UserWarning)
+####### ALPHA #######
+# Alpha - normal
+tensor([[0.1261, 0.1216, 0.1251, 0.1258, 0.1245, 0.1258, 0.1247, 0.1264],
+        [0.1222, 0.1204, 0.1227, 0.1264, 0.1257, 0.1274, 0.1271, 0.1281]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1261, 0.1217, 0.1240, 0.1259, 0.1261, 0.1261, 0.1242, 0.1258],
+        [0.1232, 0.1210, 0.1231, 0.1264, 0.1247, 0.1265, 0.1263, 0.1289],
+        [0.1226, 0.1202, 0.1240, 0.1261, 0.1259, 0.1262, 0.1255, 0.1295]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1256, 0.1215, 0.1242, 0.1252, 0.1251, 0.1256, 0.1251, 0.1278],
+        [0.1227, 0.1213, 0.1234, 0.1259, 0.1259, 0.1262, 0.1267, 0.1280],
+        [0.1216, 0.1200, 0.1238, 0.1251, 0.1261, 0.1258, 0.1277, 0.1298],
+        [0.1204, 0.1183, 0.1207, 0.1281, 0.1283, 0.1265, 0.1276, 0.1301]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1254, 0.1222, 0.1242, 0.1253, 0.1254, 0.1260, 0.1247, 0.1267],
+        [0.1224, 0.1212, 0.1230, 0.1252, 0.1256, 0.1279, 0.1257, 0.1291],
+        [0.1218, 0.1199, 0.1227, 0.1259, 0.1264, 0.1262, 0.1279, 0.1292],
+        [0.1208, 0.1189, 0.1210, 0.1263, 0.1278, 0.1280, 0.1274, 0.1298],
+        [0.1196, 0.1179, 0.1200, 0.1276, 0.1286, 0.1281, 0.1289, 0.1294]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+
+# Alpha - reduce
+tensor([[0.1255, 0.1240, 0.1254, 0.1251, 0.1242, 0.1246, 0.1254, 0.1259],
+        [0.1260, 0.1241, 0.1250, 0.1245, 0.1259, 0.1258, 0.1246, 0.1240]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1258, 0.1242, 0.1270, 0.1244, 0.1246, 0.1248, 0.1254, 0.1238],
+        [0.1276, 0.1254, 0.1247, 0.1241, 0.1239, 0.1255, 0.1241, 0.1247],
+        [0.1242, 0.1226, 0.1272, 0.1240, 0.1247, 0.1251, 0.1257, 0.1265]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1265, 0.1249, 0.1240, 0.1246, 0.1277, 0.1242, 0.1237, 0.1243],
+        [0.1269, 0.1251, 0.1251, 0.1258, 0.1242, 0.1250, 0.1246, 0.1233],
+        [0.1239, 0.1222, 0.1259, 0.1265, 0.1253, 0.1243, 0.1285, 0.1234],
+        [0.1234, 0.1220, 0.1262, 0.1257, 0.1257, 0.1258, 0.1258, 0.1253]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1263, 0.1246, 0.1254, 0.1240, 0.1252, 0.1253, 0.1255, 0.1236],
+        [0.1272, 0.1249, 0.1246, 0.1244, 0.1256, 0.1250, 0.1233, 0.1250],
+        [0.1247, 0.1231, 0.1278, 0.1238, 0.1237, 0.1239, 0.1254, 0.1276],
+        [0.1220, 0.1204, 0.1247, 0.1261, 0.1284, 0.1257, 0.1264, 0.1263],
+        [0.1229, 0.1224, 0.1270, 0.1253, 0.1253, 0.1256, 0.1242, 0.1273]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+#####################
+
+11/21 09:55:23 AM | Train: [ 5/100] Step 000/097 Loss 1.394 Prec@(1,5) (45.3%, 92.2%)
+11/21 09:57:11 AM | Train: [ 5/100] Step 050/097 Loss 1.386 Prec@(1,5) (49.3%, 92.6%)
+11/21 09:58:50 AM | Train: [ 5/100] Step 097/097 Loss 1.342 Prec@(1,5) (50.9%, 93.2%)
+11/21 09:58:50 AM | Train: [ 5/100] Final Prec@1 50.9440%
+step:  10
+step:  20
+step:  30
+step:  40
+step:  50
+step:  60
+step:  70
+step:  80
+step:  90
+11/21 09:58:50 AM | Valid: [ 5/100] Step 000/097 Loss 1.369 Prec@(1,5) (50.0%, 92.2%)
+11/21 09:58:57 AM | Valid: [ 5/100] Step 050/097 Loss 1.330 Prec@(1,5) (51.4%, 94.6%)
+11/21 09:59:02 AM | Valid: [ 5/100] Step 097/097 Loss 1.327 Prec@(1,5) (51.6%, 94.2%)
+11/21 09:59:02 AM | Valid: [ 5/100] Final Prec@1 51.5680%
+11/21 09:59:02 AM | genotype = Genotype(normal=[[('dil_conv_3x3', 1), ('max_pool_3x3', 0)], [('dil_conv_3x3', 1), ('sep_conv_3x3', 2)], [('sep_conv_5x5', 3), ('dil_conv_5x5', 2)], [('dil_conv_5x5', 4), ('dil_conv_3x3', 3)]], normal_concat=range(2, 6), reduce=[[('max_pool_3x3', 1), ('max_pool_3x3', 0)], [('max_pool_3x3', 1), ('skip_connect', 0)], [('dil_conv_5x5', 2), ('sep_conv_5x5', 0)], [('skip_connect', 2), ('sep_conv_5x5', 3)]], reduce_concat=range(2, 6))
+11/21 09:59:03 AM | Final best Prec@1 = 51.5680%
+11/21 09:59:03 AM | Best Genotype = Genotype(normal=[[('dil_conv_3x3', 1), ('max_pool_3x3', 0)], [('dil_conv_3x3', 1), ('sep_conv_3x3', 2)], [('sep_conv_5x5', 3), ('dil_conv_5x5', 2)], [('dil_conv_5x5', 4), ('dil_conv_3x3', 3)]], normal_concat=range(2, 6), reduce=[[('max_pool_3x3', 1), ('max_pool_3x3', 0)], [('max_pool_3x3', 1), ('skip_connect', 0)], [('dil_conv_5x5', 2), ('sep_conv_5x5', 0)], [('skip_connect', 2), ('sep_conv_5x5', 3)]], reduce_concat=range(2, 6))
+/home/huawei/anaconda3/envs/lfh_darts/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:808: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  "please use `get_last_lr()`.", UserWarning)
+####### ALPHA #######
+# Alpha - normal
+tensor([[0.1272, 0.1211, 0.1257, 0.1258, 0.1239, 0.1260, 0.1245, 0.1258],
+        [0.1218, 0.1192, 0.1222, 0.1265, 0.1259, 0.1279, 0.1277, 0.1289]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1272, 0.1214, 0.1243, 0.1262, 0.1258, 0.1259, 0.1243, 0.1250],
+        [0.1229, 0.1199, 0.1225, 0.1264, 0.1247, 0.1274, 0.1260, 0.1301],
+        [0.1227, 0.1191, 0.1237, 0.1270, 0.1259, 0.1258, 0.1255, 0.1303]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1267, 0.1213, 0.1247, 0.1257, 0.1246, 0.1249, 0.1248, 0.1274],
+        [0.1223, 0.1202, 0.1229, 0.1262, 0.1264, 0.1265, 0.1263, 0.1294],
+        [0.1218, 0.1190, 0.1236, 0.1245, 0.1262, 0.1264, 0.1277, 0.1307],
+        [0.1202, 0.1172, 0.1200, 0.1283, 0.1291, 0.1262, 0.1280, 0.1310]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1266, 0.1222, 0.1247, 0.1252, 0.1253, 0.1257, 0.1245, 0.1258],
+        [0.1222, 0.1202, 0.1225, 0.1252, 0.1256, 0.1279, 0.1262, 0.1302],
+        [0.1218, 0.1189, 0.1223, 0.1260, 0.1265, 0.1265, 0.1281, 0.1301],
+        [0.1206, 0.1179, 0.1204, 0.1261, 0.1281, 0.1287, 0.1276, 0.1306],
+        [0.1191, 0.1166, 0.1192, 0.1281, 0.1286, 0.1284, 0.1299, 0.1301]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+
+# Alpha - reduce
+tensor([[0.1258, 0.1240, 0.1251, 0.1255, 0.1239, 0.1240, 0.1255, 0.1262],
+        [0.1265, 0.1241, 0.1253, 0.1245, 0.1256, 0.1258, 0.1245, 0.1237]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1260, 0.1242, 0.1283, 0.1244, 0.1240, 0.1244, 0.1255, 0.1232],
+        [0.1284, 0.1256, 0.1243, 0.1233, 0.1242, 0.1257, 0.1238, 0.1247],
+        [0.1245, 0.1226, 0.1277, 0.1238, 0.1247, 0.1244, 0.1255, 0.1268]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1267, 0.1250, 0.1245, 0.1243, 0.1277, 0.1244, 0.1238, 0.1236],
+        [0.1273, 0.1250, 0.1255, 0.1261, 0.1243, 0.1251, 0.1239, 0.1228],
+        [0.1242, 0.1220, 0.1263, 0.1262, 0.1252, 0.1236, 0.1290, 0.1235],
+        [0.1235, 0.1217, 0.1265, 0.1258, 0.1257, 0.1262, 0.1252, 0.1253]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1266, 0.1248, 0.1255, 0.1230, 0.1255, 0.1252, 0.1257, 0.1236],
+        [0.1275, 0.1249, 0.1253, 0.1246, 0.1254, 0.1248, 0.1230, 0.1247],
+        [0.1248, 0.1231, 0.1285, 0.1237, 0.1229, 0.1242, 0.1244, 0.1282],
+        [0.1218, 0.1200, 0.1247, 0.1258, 0.1288, 0.1251, 0.1271, 0.1267],
+        [0.1229, 0.1224, 0.1276, 0.1247, 0.1252, 0.1245, 0.1245, 0.1282]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+#####################
+
+11/21 09:59:06 AM | Train: [ 6/100] Step 000/097 Loss 1.494 Prec@(1,5) (48.4%, 93.8%)
+11/21 10:00:51 AM | Train: [ 6/100] Step 050/097 Loss 1.303 Prec@(1,5) (53.1%, 93.7%)
+11/21 10:02:29 AM | Train: [ 6/100] Step 097/097 Loss 1.279 Prec@(1,5) (54.0%, 93.8%)
+11/21 10:02:29 AM | Train: [ 6/100] Final Prec@1 54.0160%
+step:  10
+step:  20
+step:  30
+step:  40
+step:  50
+step:  60
+step:  70
+step:  80
+step:  90
+11/21 10:02:29 AM | Valid: [ 6/100] Step 000/097 Loss 1.078 Prec@(1,5) (60.9%, 95.3%)
+11/21 10:02:36 AM | Valid: [ 6/100] Step 050/097 Loss 1.273 Prec@(1,5) (54.4%, 94.8%)
+11/21 10:02:42 AM | Valid: [ 6/100] Step 097/097 Loss 1.282 Prec@(1,5) (54.3%, 94.5%)
+11/21 10:02:42 AM | Valid: [ 6/100] Final Prec@1 54.2560%
+11/21 10:02:42 AM | genotype = Genotype(normal=[[('dil_conv_3x3', 1), ('max_pool_3x3', 0)], [('sep_conv_3x3', 2), ('dil_conv_3x3', 1)], [('sep_conv_5x5', 3), ('dil_conv_5x5', 2)], [('dil_conv_5x5', 4), ('dil_conv_3x3', 3)]], normal_concat=range(2, 6), reduce=[[('max_pool_3x3', 1), ('max_pool_3x3', 0)], [('max_pool_3x3', 1), ('skip_connect', 2)], [('dil_conv_5x5', 2), ('sep_conv_5x5', 0)], [('skip_connect', 2), ('sep_conv_5x5', 3)]], reduce_concat=range(2, 6))
+11/21 10:02:43 AM | Final best Prec@1 = 54.2560%
+11/21 10:02:43 AM | Best Genotype = Genotype(normal=[[('dil_conv_3x3', 1), ('max_pool_3x3', 0)], [('sep_conv_3x3', 2), ('dil_conv_3x3', 1)], [('sep_conv_5x5', 3), ('dil_conv_5x5', 2)], [('dil_conv_5x5', 4), ('dil_conv_3x3', 3)]], normal_concat=range(2, 6), reduce=[[('max_pool_3x3', 1), ('max_pool_3x3', 0)], [('max_pool_3x3', 1), ('skip_connect', 2)], [('dil_conv_5x5', 2), ('sep_conv_5x5', 0)], [('skip_connect', 2), ('sep_conv_5x5', 3)]], reduce_concat=range(2, 6))
+/home/huawei/anaconda3/envs/lfh_darts/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:808: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  "please use `get_last_lr()`.", UserWarning)
+####### ALPHA #######
+# Alpha - normal
+tensor([[0.1281, 0.1206, 0.1259, 0.1265, 0.1242, 0.1261, 0.1236, 0.1250],
+        [0.1211, 0.1178, 0.1212, 0.1273, 0.1265, 0.1285, 0.1279, 0.1298]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1282, 0.1213, 0.1247, 0.1268, 0.1259, 0.1253, 0.1236, 0.1242],
+        [0.1224, 0.1189, 0.1221, 0.1268, 0.1248, 0.1276, 0.1260, 0.1315],
+        [0.1227, 0.1181, 0.1234, 0.1283, 0.1264, 0.1253, 0.1252, 0.1307]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1278, 0.1213, 0.1251, 0.1264, 0.1246, 0.1243, 0.1239, 0.1267],
+        [0.1215, 0.1190, 0.1221, 0.1267, 0.1273, 0.1268, 0.1262, 0.1304],
+        [0.1219, 0.1183, 0.1235, 0.1241, 0.1266, 0.1264, 0.1281, 0.1311],
+        [0.1201, 0.1165, 0.1199, 0.1278, 0.1291, 0.1271, 0.1275, 0.1320]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1278, 0.1226, 0.1254, 0.1241, 0.1254, 0.1258, 0.1240, 0.1249],
+        [0.1216, 0.1190, 0.1219, 0.1246, 0.1264, 0.1282, 0.1266, 0.1318],
+        [0.1218, 0.1182, 0.1223, 0.1258, 0.1270, 0.1257, 0.1286, 0.1307],
+        [0.1203, 0.1170, 0.1198, 0.1260, 0.1285, 0.1295, 0.1279, 0.1311],
+        [0.1186, 0.1157, 0.1185, 0.1284, 0.1287, 0.1288, 0.1304, 0.1309]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+
+# Alpha - reduce
+tensor([[0.1267, 0.1243, 0.1244, 0.1253, 0.1244, 0.1240, 0.1252, 0.1256],
+        [0.1272, 0.1236, 0.1255, 0.1245, 0.1255, 0.1255, 0.1238, 0.1244]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1266, 0.1242, 0.1280, 0.1247, 0.1242, 0.1245, 0.1254, 0.1224],
+        [0.1290, 0.1250, 0.1250, 0.1228, 0.1244, 0.1256, 0.1231, 0.1251],
+        [0.1255, 0.1221, 0.1277, 0.1240, 0.1244, 0.1238, 0.1255, 0.1269]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1277, 0.1253, 0.1249, 0.1236, 0.1278, 0.1234, 0.1240, 0.1232],
+        [0.1275, 0.1240, 0.1261, 0.1260, 0.1247, 0.1247, 0.1241, 0.1230],
+        [0.1257, 0.1215, 0.1265, 0.1250, 0.1251, 0.1231, 0.1292, 0.1239],
+        [0.1248, 0.1215, 0.1265, 0.1260, 0.1255, 0.1257, 0.1249, 0.1251]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1276, 0.1251, 0.1256, 0.1231, 0.1258, 0.1243, 0.1258, 0.1228],
+        [0.1276, 0.1240, 0.1252, 0.1239, 0.1259, 0.1245, 0.1229, 0.1259],
+        [0.1261, 0.1228, 0.1286, 0.1235, 0.1225, 0.1238, 0.1243, 0.1284],
+        [0.1226, 0.1198, 0.1242, 0.1252, 0.1291, 0.1249, 0.1273, 0.1269],
+        [0.1236, 0.1221, 0.1273, 0.1243, 0.1246, 0.1243, 0.1253, 0.1285]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+#####################
+
+11/21 10:02:46 AM | Train: [ 7/100] Step 000/097 Loss 1.314 Prec@(1,5) (51.6%, 93.8%)
+11/21 10:04:31 AM | Train: [ 7/100] Step 050/097 Loss 1.186 Prec@(1,5) (57.3%, 95.5%)
+11/21 10:06:09 AM | Train: [ 7/100] Step 097/097 Loss 1.167 Prec@(1,5) (58.3%, 95.3%)
+11/21 10:06:09 AM | Train: [ 7/100] Final Prec@1 58.2880%
+step:  10
+step:  20
+step:  30
+step:  40
+step:  50
+step:  60
+step:  70
+step:  80
+step:  90
+11/21 10:06:09 AM | Valid: [ 7/100] Step 000/097 Loss 1.162 Prec@(1,5) (64.1%, 95.3%)
+11/21 10:06:16 AM | Valid: [ 7/100] Step 050/097 Loss 1.124 Prec@(1,5) (60.7%, 95.8%)
+11/21 10:06:22 AM | Valid: [ 7/100] Step 097/097 Loss 1.132 Prec@(1,5) (59.9%, 95.4%)
+11/21 10:06:22 AM | Valid: [ 7/100] Final Prec@1 59.8880%
+11/21 10:06:22 AM | genotype = Genotype(normal=[[('dil_conv_3x3', 1), ('max_pool_3x3', 0)], [('sep_conv_3x3', 2), ('max_pool_3x3', 0)], [('sep_conv_5x5', 3), ('dil_conv_5x5', 2)], [('dil_conv_5x5', 4), ('dil_conv_3x3', 3)]], normal_concat=range(2, 6), reduce=[[('max_pool_3x3', 1), ('max_pool_3x3', 0)], [('max_pool_3x3', 1), ('skip_connect', 2)], [('dil_conv_5x5', 2), ('max_pool_3x3', 0)], [('skip_connect', 2), ('sep_conv_5x5', 3)]], reduce_concat=range(2, 6))
+11/21 10:06:22 AM | Final best Prec@1 = 59.8880%
+11/21 10:06:22 AM | Best Genotype = Genotype(normal=[[('dil_conv_3x3', 1), ('max_pool_3x3', 0)], [('sep_conv_3x3', 2), ('max_pool_3x3', 0)], [('sep_conv_5x5', 3), ('dil_conv_5x5', 2)], [('dil_conv_5x5', 4), ('dil_conv_3x3', 3)]], normal_concat=range(2, 6), reduce=[[('max_pool_3x3', 1), ('max_pool_3x3', 0)], [('max_pool_3x3', 1), ('skip_connect', 2)], [('dil_conv_5x5', 2), ('max_pool_3x3', 0)], [('skip_connect', 2), ('sep_conv_5x5', 3)]], reduce_concat=range(2, 6))
+/home/huawei/anaconda3/envs/lfh_darts/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:808: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  "please use `get_last_lr()`.", UserWarning)
+####### ALPHA #######
+# Alpha - normal
+tensor([[0.1291, 0.1201, 0.1263, 0.1267, 0.1240, 0.1259, 0.1236, 0.1243],
+        [0.1199, 0.1162, 0.1200, 0.1276, 0.1273, 0.1293, 0.1284, 0.1313]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1291, 0.1210, 0.1249, 0.1272, 0.1255, 0.1249, 0.1235, 0.1239],
+        [0.1213, 0.1174, 0.1210, 0.1279, 0.1250, 0.1280, 0.1265, 0.1328],
+        [0.1225, 0.1167, 0.1227, 0.1286, 0.1267, 0.1254, 0.1257, 0.1318]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1284, 0.1207, 0.1249, 0.1273, 0.1246, 0.1236, 0.1240, 0.1265],
+        [0.1206, 0.1177, 0.1213, 0.1269, 0.1285, 0.1273, 0.1259, 0.1318],
+        [0.1215, 0.1169, 0.1227, 0.1246, 0.1266, 0.1266, 0.1288, 0.1324],
+        [0.1194, 0.1148, 0.1186, 0.1280, 0.1298, 0.1275, 0.1288, 0.1331]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1292, 0.1228, 0.1262, 0.1233, 0.1248, 0.1258, 0.1230, 0.1248],
+        [0.1207, 0.1175, 0.1209, 0.1245, 0.1271, 0.1291, 0.1271, 0.1331],
+        [0.1219, 0.1172, 0.1220, 0.1257, 0.1270, 0.1250, 0.1292, 0.1320],
+        [0.1198, 0.1157, 0.1190, 0.1260, 0.1287, 0.1301, 0.1286, 0.1322],
+        [0.1178, 0.1143, 0.1176, 0.1289, 0.1291, 0.1295, 0.1308, 0.1319]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+
+# Alpha - reduce
+tensor([[0.1274, 0.1248, 0.1235, 0.1246, 0.1252, 0.1241, 0.1252, 0.1253],
+        [0.1274, 0.1234, 0.1252, 0.1251, 0.1247, 0.1256, 0.1241, 0.1245]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1273, 0.1247, 0.1279, 0.1246, 0.1249, 0.1235, 0.1253, 0.1219],
+        [0.1298, 0.1253, 0.1250, 0.1220, 0.1240, 0.1256, 0.1224, 0.1260],
+        [0.1263, 0.1219, 0.1280, 0.1242, 0.1245, 0.1232, 0.1251, 0.1268]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1283, 0.1259, 0.1256, 0.1243, 0.1270, 0.1229, 0.1233, 0.1227],
+        [0.1275, 0.1238, 0.1264, 0.1259, 0.1247, 0.1245, 0.1240, 0.1233],
+        [0.1262, 0.1213, 0.1268, 0.1246, 0.1246, 0.1234, 0.1297, 0.1234],
+        [0.1249, 0.1203, 0.1260, 0.1263, 0.1251, 0.1264, 0.1256, 0.1254]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1282, 0.1255, 0.1247, 0.1232, 0.1255, 0.1243, 0.1260, 0.1227],
+        [0.1278, 0.1239, 0.1253, 0.1240, 0.1260, 0.1245, 0.1226, 0.1260],
+        [0.1268, 0.1224, 0.1289, 0.1239, 0.1218, 0.1240, 0.1238, 0.1284],
+        [0.1231, 0.1188, 0.1240, 0.1244, 0.1296, 0.1249, 0.1277, 0.1276],
+        [0.1238, 0.1215, 0.1273, 0.1243, 0.1248, 0.1242, 0.1254, 0.1287]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+#####################
+
+11/21 10:06:25 AM | Train: [ 8/100] Step 000/097 Loss 1.186 Prec@(1,5) (60.9%, 96.9%)
+11/21 10:08:10 AM | Train: [ 8/100] Step 050/097 Loss 1.125 Prec@(1,5) (60.7%, 95.2%)
+11/21 10:09:53 AM | Train: [ 8/100] Step 097/097 Loss 1.093 Prec@(1,5) (61.4%, 95.6%)
+11/21 10:09:53 AM | Train: [ 8/100] Final Prec@1 61.3600%
+step:  10
+step:  20
+step:  30
+step:  40
+step:  50
+step:  60
+step:  70
+step:  80
+step:  90
+11/21 10:09:54 AM | Valid: [ 8/100] Step 000/097 Loss 0.964 Prec@(1,5) (71.9%, 95.3%)
+11/21 10:10:00 AM | Valid: [ 8/100] Step 050/097 Loss 1.044 Prec@(1,5) (63.2%, 96.6%)
+11/21 10:10:06 AM | Valid: [ 8/100] Step 097/097 Loss 1.060 Prec@(1,5) (62.6%, 96.2%)
+11/21 10:10:06 AM | Valid: [ 8/100] Final Prec@1 62.6240%
+11/21 10:10:06 AM | genotype = Genotype(normal=[[('dil_conv_3x3', 1), ('max_pool_3x3', 0)], [('sep_conv_3x3', 2), ('max_pool_3x3', 0)], [('sep_conv_5x5', 3), ('sep_conv_5x5', 1)], [('dil_conv_5x5', 4), ('dil_conv_3x3', 3)]], normal_concat=range(2, 6), reduce=[[('max_pool_3x3', 0), ('max_pool_3x3', 1)], [('max_pool_3x3', 1), ('skip_connect', 2)], [('dil_conv_5x5', 2), ('max_pool_3x3', 0)], [('skip_connect', 2), ('sep_conv_5x5', 3)]], reduce_concat=range(2, 6))
+11/21 10:10:07 AM | Final best Prec@1 = 62.6240%
+11/21 10:10:07 AM | Best Genotype = Genotype(normal=[[('dil_conv_3x3', 1), ('max_pool_3x3', 0)], [('sep_conv_3x3', 2), ('max_pool_3x3', 0)], [('sep_conv_5x5', 3), ('sep_conv_5x5', 1)], [('dil_conv_5x5', 4), ('dil_conv_3x3', 3)]], normal_concat=range(2, 6), reduce=[[('max_pool_3x3', 0), ('max_pool_3x3', 1)], [('max_pool_3x3', 1), ('skip_connect', 2)], [('dil_conv_5x5', 2), ('max_pool_3x3', 0)], [('skip_connect', 2), ('sep_conv_5x5', 3)]], reduce_concat=range(2, 6))
+/home/huawei/anaconda3/envs/lfh_darts/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:808: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  "please use `get_last_lr()`.", UserWarning)
+####### ALPHA #######
+# Alpha - normal
+tensor([[0.1295, 0.1192, 0.1265, 0.1263, 0.1245, 0.1264, 0.1237, 0.1238],
+        [0.1194, 0.1151, 0.1196, 0.1279, 0.1281, 0.1293, 0.1283, 0.1322]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1294, 0.1201, 0.1247, 0.1281, 0.1260, 0.1246, 0.1234, 0.1237],
+        [0.1208, 0.1165, 0.1207, 0.1284, 0.1250, 0.1281, 0.1270, 0.1335],
+        [0.1222, 0.1153, 0.1220, 0.1300, 0.1278, 0.1247, 0.1255, 0.1326]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1292, 0.1200, 0.1248, 0.1274, 0.1238, 0.1237, 0.1244, 0.1266],
+        [0.1201, 0.1167, 0.1209, 0.1274, 0.1298, 0.1265, 0.1254, 0.1332],
+        [0.1214, 0.1155, 0.1221, 0.1246, 0.1268, 0.1273, 0.1288, 0.1335],
+        [0.1191, 0.1134, 0.1180, 0.1281, 0.1301, 0.1284, 0.1289, 0.1341]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1295, 0.1221, 0.1259, 0.1240, 0.1254, 0.1261, 0.1226, 0.1243],
+        [0.1203, 0.1166, 0.1207, 0.1246, 0.1277, 0.1292, 0.1265, 0.1344],
+        [0.1217, 0.1159, 0.1216, 0.1256, 0.1272, 0.1252, 0.1292, 0.1335],
+        [0.1194, 0.1143, 0.1182, 0.1257, 0.1283, 0.1314, 0.1292, 0.1335],
+        [0.1170, 0.1130, 0.1167, 0.1291, 0.1297, 0.1298, 0.1314, 0.1333]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+
+# Alpha - reduce
+tensor([[0.1280, 0.1251, 0.1224, 0.1245, 0.1264, 0.1239, 0.1252, 0.1246],
+        [0.1267, 0.1221, 0.1258, 0.1257, 0.1251, 0.1253, 0.1241, 0.1252]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1280, 0.1252, 0.1276, 0.1248, 0.1252, 0.1230, 0.1247, 0.1215],
+        [0.1294, 0.1246, 0.1261, 0.1215, 0.1233, 0.1255, 0.1226, 0.1269],
+        [0.1264, 0.1214, 0.1276, 0.1249, 0.1253, 0.1224, 0.1257, 0.1263]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1291, 0.1266, 0.1252, 0.1238, 0.1271, 0.1232, 0.1230, 0.1218],
+        [0.1263, 0.1226, 0.1266, 0.1262, 0.1255, 0.1250, 0.1236, 0.1242],
+        [0.1259, 0.1206, 0.1265, 0.1246, 0.1245, 0.1245, 0.1304, 0.1231],
+        [0.1244, 0.1191, 0.1255, 0.1268, 0.1250, 0.1267, 0.1268, 0.1258]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1286, 0.1257, 0.1249, 0.1229, 0.1254, 0.1246, 0.1258, 0.1221],
+        [0.1270, 0.1231, 0.1261, 0.1234, 0.1262, 0.1247, 0.1231, 0.1265],
+        [0.1267, 0.1218, 0.1291, 0.1239, 0.1212, 0.1244, 0.1241, 0.1288],
+        [0.1228, 0.1177, 0.1236, 0.1239, 0.1301, 0.1255, 0.1287, 0.1277],
+        [0.1237, 0.1208, 0.1272, 0.1255, 0.1241, 0.1236, 0.1260, 0.1291]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+#####################
+
+11/21 10:10:10 AM | Train: [ 9/100] Step 000/097 Loss 1.051 Prec@(1,5) (62.5%, 95.3%)
+11/21 10:11:55 AM | Train: [ 9/100] Step 050/097 Loss 1.025 Prec@(1,5) (62.6%, 97.0%)
+11/21 10:13:33 AM | Train: [ 9/100] Step 097/097 Loss 1.012 Prec@(1,5) (63.4%, 96.8%)
+11/21 10:13:33 AM | Train: [ 9/100] Final Prec@1 63.3760%
+step:  10
+step:  20
+step:  30
+step:  40
+step:  50
+step:  60
+step:  70
+step:  80
+step:  90
+11/21 10:13:34 AM | Valid: [ 9/100] Step 000/097 Loss 0.984 Prec@(1,5) (65.6%, 96.9%)
+11/21 10:13:40 AM | Valid: [ 9/100] Step 050/097 Loss 1.012 Prec@(1,5) (64.6%, 96.2%)
+11/21 10:13:46 AM | Valid: [ 9/100] Step 097/097 Loss 1.017 Prec@(1,5) (64.6%, 96.0%)
+11/21 10:13:46 AM | Valid: [ 9/100] Final Prec@1 64.5920%
+11/21 10:13:46 AM | genotype = Genotype(normal=[[('max_pool_3x3', 0), ('sep_conv_5x5', 1)], [('sep_conv_3x3', 2), ('sep_conv_3x3', 1)], [('sep_conv_5x5', 1), ('sep_conv_5x5', 3)], [('dil_conv_5x5', 4), ('dil_conv_3x3', 3)]], normal_concat=range(2, 6), reduce=[[('max_pool_3x3', 0), ('dil_conv_3x3', 1)], [('max_pool_3x3', 1), ('skip_connect', 2)], [('dil_conv_5x5', 2), ('max_pool_3x3', 0)], [('sep_conv_5x5', 3), ('skip_connect', 2)]], reduce_concat=range(2, 6))
+11/21 10:13:46 AM | Final best Prec@1 = 64.5920%
+11/21 10:13:46 AM | Best Genotype = Genotype(normal=[[('max_pool_3x3', 0), ('sep_conv_5x5', 1)], [('sep_conv_3x3', 2), ('sep_conv_3x3', 1)], [('sep_conv_5x5', 1), ('sep_conv_5x5', 3)], [('dil_conv_5x5', 4), ('dil_conv_3x3', 3)]], normal_concat=range(2, 6), reduce=[[('max_pool_3x3', 0), ('dil_conv_3x3', 1)], [('max_pool_3x3', 1), ('skip_connect', 2)], [('dil_conv_5x5', 2), ('max_pool_3x3', 0)], [('sep_conv_5x5', 3), ('skip_connect', 2)]], reduce_concat=range(2, 6))
+/home/huawei/anaconda3/envs/lfh_darts/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:808: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  "please use `get_last_lr()`.", UserWarning)
+####### ALPHA #######
+# Alpha - normal
+tensor([[0.1305, 0.1186, 0.1271, 0.1258, 0.1252, 0.1267, 0.1232, 0.1230],
+        [0.1184, 0.1138, 0.1186, 0.1283, 0.1294, 0.1289, 0.1291, 0.1336]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1300, 0.1194, 0.1246, 0.1285, 0.1261, 0.1242, 0.1240, 0.1233],
+        [0.1199, 0.1154, 0.1198, 0.1292, 0.1254, 0.1280, 0.1276, 0.1348],
+        [0.1221, 0.1140, 0.1214, 0.1308, 0.1283, 0.1246, 0.1258, 0.1331]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1302, 0.1196, 0.1253, 0.1276, 0.1227, 0.1234, 0.1245, 0.1266],
+        [0.1191, 0.1153, 0.1199, 0.1282, 0.1310, 0.1263, 0.1256, 0.1348],
+        [0.1212, 0.1142, 0.1216, 0.1252, 0.1267, 0.1271, 0.1296, 0.1343],
+        [0.1188, 0.1122, 0.1175, 0.1274, 0.1301, 0.1289, 0.1293, 0.1358]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1302, 0.1216, 0.1259, 0.1246, 0.1258, 0.1261, 0.1218, 0.1240],
+        [0.1194, 0.1154, 0.1199, 0.1251, 0.1285, 0.1296, 0.1261, 0.1359],
+        [0.1219, 0.1151, 0.1215, 0.1255, 0.1268, 0.1255, 0.1293, 0.1344],
+        [0.1191, 0.1133, 0.1178, 0.1253, 0.1290, 0.1315, 0.1294, 0.1346],
+        [0.1161, 0.1115, 0.1155, 0.1297, 0.1307, 0.1298, 0.1322, 0.1346]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+
+# Alpha - reduce
+tensor([[0.1280, 0.1248, 0.1214, 0.1248, 0.1272, 0.1243, 0.1253, 0.1242],
+        [0.1259, 0.1213, 0.1256, 0.1252, 0.1258, 0.1260, 0.1244, 0.1257]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1282, 0.1251, 0.1278, 0.1244, 0.1262, 0.1226, 0.1248, 0.1210],
+        [0.1289, 0.1242, 0.1266, 0.1214, 0.1239, 0.1257, 0.1223, 0.1271],
+        [0.1264, 0.1209, 0.1275, 0.1248, 0.1259, 0.1221, 0.1258, 0.1266]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1295, 0.1268, 0.1249, 0.1236, 0.1274, 0.1229, 0.1229, 0.1220],
+        [0.1259, 0.1225, 0.1266, 0.1258, 0.1262, 0.1254, 0.1233, 0.1243],
+        [0.1258, 0.1200, 0.1263, 0.1245, 0.1248, 0.1252, 0.1303, 0.1231],
+        [0.1245, 0.1183, 0.1252, 0.1273, 0.1249, 0.1277, 0.1270, 0.1250]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1291, 0.1260, 0.1248, 0.1223, 0.1257, 0.1241, 0.1260, 0.1221],
+        [0.1268, 0.1231, 0.1261, 0.1233, 0.1269, 0.1240, 0.1225, 0.1274],
+        [0.1271, 0.1212, 0.1290, 0.1233, 0.1205, 0.1251, 0.1248, 0.1290],
+        [0.1232, 0.1173, 0.1238, 0.1228, 0.1306, 0.1256, 0.1291, 0.1275],
+        [0.1241, 0.1204, 0.1274, 0.1256, 0.1239, 0.1235, 0.1260, 0.1290]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+#####################
+
+11/21 10:13:49 AM | Train: [10/100] Step 000/097 Loss 1.005 Prec@(1,5) (68.8%, 95.3%)
+11/21 10:15:34 AM | Train: [10/100] Step 050/097 Loss 1.022 Prec@(1,5) (63.7%, 96.8%)
+11/21 10:17:11 AM | Train: [10/100] Step 097/097 Loss 1.002 Prec@(1,5) (64.6%, 96.8%)
+11/21 10:17:11 AM | Train: [10/100] Final Prec@1 64.5760%
+step:  10
+step:  20
+step:  30
+step:  40
+step:  50
+step:  60
+step:  70
+step:  80
+step:  90
+11/21 10:17:12 AM | Valid: [10/100] Step 000/097 Loss 1.060 Prec@(1,5) (70.3%, 93.8%)
+11/21 10:17:18 AM | Valid: [10/100] Step 050/097 Loss 1.048 Prec@(1,5) (65.1%, 96.8%)
+11/21 10:17:24 AM | Valid: [10/100] Step 097/097 Loss 1.074 Prec@(1,5) (63.7%, 96.5%)
+11/21 10:17:24 AM | Valid: [10/100] Final Prec@1 63.6800%
+11/21 10:17:24 AM | genotype = Genotype(normal=[[('sep_conv_5x5', 1), ('max_pool_3x3', 0)], [('sep_conv_3x3', 2), ('sep_conv_3x3', 1)], [('sep_conv_5x5', 1), ('sep_conv_5x5', 3)], [('dil_conv_5x5', 4), ('dil_conv_3x3', 3)]], normal_concat=range(2, 6), reduce=[[('sep_conv_5x5', 0), ('sep_conv_5x5', 1)], [('max_pool_3x3', 1), ('skip_connect', 0)], [('dil_conv_5x5', 2), ('max_pool_3x3', 0)], [('skip_connect', 2), ('sep_conv_5x5', 3)]], reduce_concat=range(2, 6))
+11/21 10:17:25 AM | Final best Prec@1 = 64.5920%
+11/21 10:17:25 AM | Best Genotype = Genotype(normal=[[('max_pool_3x3', 0), ('sep_conv_5x5', 1)], [('sep_conv_3x3', 2), ('sep_conv_3x3', 1)], [('sep_conv_5x5', 1), ('sep_conv_5x5', 3)], [('dil_conv_5x5', 4), ('dil_conv_3x3', 3)]], normal_concat=range(2, 6), reduce=[[('max_pool_3x3', 0), ('dil_conv_3x3', 1)], [('max_pool_3x3', 1), ('skip_connect', 2)], [('dil_conv_5x5', 2), ('max_pool_3x3', 0)], [('sep_conv_5x5', 3), ('skip_connect', 2)]], reduce_concat=range(2, 6))
+/home/huawei/anaconda3/envs/lfh_darts/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:808: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  "please use `get_last_lr()`.", UserWarning)
+####### ALPHA #######
+# Alpha - normal
+tensor([[0.1299, 0.1182, 0.1274, 0.1264, 0.1259, 0.1270, 0.1228, 0.1224],
+        [0.1172, 0.1123, 0.1174, 0.1290, 0.1306, 0.1301, 0.1288, 0.1346]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1297, 0.1195, 0.1252, 0.1287, 0.1259, 0.1242, 0.1240, 0.1228],
+        [0.1185, 0.1142, 0.1188, 0.1300, 0.1256, 0.1284, 0.1284, 0.1363],
+        [0.1214, 0.1130, 0.1207, 0.1325, 0.1284, 0.1246, 0.1260, 0.1333]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1301, 0.1196, 0.1259, 0.1291, 0.1224, 0.1230, 0.1235, 0.1264],
+        [0.1178, 0.1139, 0.1188, 0.1291, 0.1321, 0.1266, 0.1254, 0.1363],
+        [0.1207, 0.1131, 0.1209, 0.1256, 0.1270, 0.1270, 0.1303, 0.1353],
+        [0.1178, 0.1110, 0.1166, 0.1280, 0.1306, 0.1296, 0.1293, 0.1372]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1299, 0.1216, 0.1264, 0.1246, 0.1256, 0.1266, 0.1213, 0.1240],
+        [0.1180, 0.1141, 0.1190, 0.1254, 0.1299, 0.1297, 0.1266, 0.1372],
+        [0.1214, 0.1141, 0.1209, 0.1263, 0.1278, 0.1255, 0.1290, 0.1349],
+        [0.1182, 0.1123, 0.1171, 0.1254, 0.1299, 0.1320, 0.1292, 0.1359],
+        [0.1149, 0.1103, 0.1146, 0.1298, 0.1311, 0.1300, 0.1330, 0.1364]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+
+# Alpha - reduce
+tensor([[0.1275, 0.1248, 0.1216, 0.1250, 0.1276, 0.1239, 0.1253, 0.1242],
+        [0.1257, 0.1212, 0.1251, 0.1255, 0.1264, 0.1260, 0.1244, 0.1257]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1277, 0.1251, 0.1283, 0.1246, 0.1263, 0.1223, 0.1249, 0.1208],
+        [0.1288, 0.1241, 0.1276, 0.1212, 0.1241, 0.1255, 0.1223, 0.1264],
+        [0.1259, 0.1203, 0.1273, 0.1249, 0.1267, 0.1222, 0.1263, 0.1265]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1295, 0.1274, 0.1254, 0.1238, 0.1268, 0.1227, 0.1223, 0.1221],
+        [0.1259, 0.1229, 0.1275, 0.1259, 0.1261, 0.1249, 0.1229, 0.1239],
+        [0.1254, 0.1195, 0.1264, 0.1237, 0.1255, 0.1252, 0.1311, 0.1233],
+        [0.1246, 0.1181, 0.1254, 0.1280, 0.1242, 0.1277, 0.1274, 0.1247]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+tensor([[0.1291, 0.1266, 0.1247, 0.1227, 0.1262, 0.1231, 0.1253, 0.1222],
+        [0.1269, 0.1238, 0.1265, 0.1228, 0.1269, 0.1235, 0.1224, 0.1273],
+        [0.1268, 0.1209, 0.1297, 0.1230, 0.1204, 0.1246, 0.1246, 0.1300],
+        [0.1234, 0.1172, 0.1242, 0.1221, 0.1306, 0.1258, 0.1290, 0.1277],
+        [0.1236, 0.1201, 0.1273, 0.1260, 0.1240, 0.1231, 0.1264, 0.1295]],
+       device='cuda:0', grad_fn=<SoftmaxBackward0>)
+#####################
+
+11/21 10:17:27 AM | Train: [11/100] Step 000/097 Loss 0.926 Prec@(1,5) (65.6%, 98.4%)
+11/21 10:19:11 AM | Train: [11/100] Step 050/097 Loss 0.927 Prec@(1,5) (67.3%, 97.0%)

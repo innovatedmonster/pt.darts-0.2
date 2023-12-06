@@ -1,0 +1,23 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    {
+        "version": "0.2.0",
+        "configurations": [
+            
+          {
+            "name": "Debug Darts",
+            "type": "python",
+            "python": "/home/xcn/anaconda3/envs/lfh_py37/lib/python3.7",
+            "request": "launch",
+            "host": "10.16.14.20",
+            "port": 22,
+            "program": "${workspaceFolder}/main.go",
+            "cwd": "${workspaceFolder}",
+            "env": {},
+            "args": ["create", "cluster"]
+          }
+        ]
+      }
+}

@@ -1,0 +1,6 @@
+*.pyc
+*.swp
+*.zip
+/data
+/searchs
+/MNIST
